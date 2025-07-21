@@ -88,7 +88,6 @@ def predict_emotion(segment_features):
 
 # ---------------------- Segment Audio ----------------------
 
-# ---------------------- Segment Audio (Improved Logic) ----------------------
 def segment_audio(audio_path, sr=16000, segment_duration=3):
     audio, _ = librosa.load(audio_path, sr=sr)
     segments = []
