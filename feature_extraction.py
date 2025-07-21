@@ -16,22 +16,6 @@ def preprocess_audio(audio_path, output_path, target_sr=16000):
         print(f"❌ Skipping {audio_path} due to error: {e}")
 
 
-'''def preprocess_audio(audio_path, output_path, target_sr=16000):
-    os.makedirs(os.path.dirname(output_path), exist_ok=True)  # Ensure output directory exists
-    audio, sr = librosa.load(audio_path, sr=None)
-    audio = librosa.resample(audio, orig_sr=sr, target_sr=target_sr)
-    audio = librosa.util.normalize(audio)
-    sf.write(output_path, audio, target_sr)'''
-
-# Feature Extraction Function
-'''def extract_features(audio_path, sr=16000, n_mfcc=13):
-    audio, _ = librosa.load(audio_path, sr=sr)
-    mfcc = librosa.feature.mfcc(y=audio, sr=sr, n_mfcc=n_mfcc)
-    chroma = librosa.feature.chroma_stft(y=audio, sr=sr)
-    mel = librosa.feature.melspectrogram(y=audio, sr=sr)
-
-    return np.hstack((np.mean(mfcc, axis=1), np.mean(chroma, axis=1), np.mean(mel, axis=1)))'''
-
 # Feature Extraction with Delta and Delta-Delta Features
 def extract_features(audio_path, sr=16000, n_mfcc=40):
     audio, _ = librosa.load(audio_path, sr=sr)
@@ -82,7 +66,6 @@ def process_dataset(output_csv):
         process_audioWav("data/raw/audioWav", "data/processed/"),
         process_RAVDESS("data/raw/RAVDESS", "data/processed/"),
         process_EMO_DB("data/raw/EMO-DB/wav", "data/processed/"),
-        #process_IEMOCAP("data/raw/IEMOCAP/iemocap_full_dataset.csv"),
         process_SAVEE("data/raw/SAVEE/ALL"),
         process_TESS("data/raw/TESS/TESS Toronto emotional speech set data")
     ]
