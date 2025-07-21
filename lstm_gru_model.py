@@ -42,9 +42,7 @@ def extract_features(segment, sr=16000, n_mfcc=40):
 
     chroma = np.mean(librosa.feature.chroma_stft(y=segment, sr=sr), axis=1)
     mel = np.mean(librosa.feature.melspectrogram(y=segment, sr=sr), axis=1)
-    #zcr = np.mean(librosa.feature.zero_crossing_rate(y=segment))
-    #rmse = np.mean(librosa.feature.rms(y=segment))
-    #spectral_contrast = np.mean(librosa.feature.spectral_contrast(y=segment, sr=sr), axis=1)
+    
 
     return np.hstack((mfcc_mean, delta_mean, delta_delta_mean, chroma, mel))
 
@@ -125,15 +123,6 @@ if __name__ == "__main__":
           epochs=30, batch_size=64,
           callbacks=[early_stopping])
 
-
-
-    # Early stopping with reduced patience for quicker termination
-    '''early_stopping = EarlyStopping(monitor='val_loss', patience=3, restore_best_weights=True, min_delta=0.001)
-    lr_scheduler = ReduceLROnPlateau(monitor='val_loss', factor=0.5, patience=2)
-
-    model.fit(X_train, y_train, validation_data=(X_test, y_test), 
-              epochs=30, batch_size=64,  # Reduced epochs & increased batch size
-              callbacks=[early_stopping, lr_scheduler])'''
 
     # Accuracy Evaluation
     loss, accuracy = model.evaluate(X_test, y_test)
