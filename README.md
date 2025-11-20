@@ -4,6 +4,7 @@ A Hybrid Deep Learning + Whisper ASR System
 
 <p align="center"> <img src="Ser.png" alt="SER Banner" width="80%"> </p>
 
+```
 🎙️ Overview
 This project implements a Real-Time Speech Emotion Recognition (SER) system capable of detecting human emotions directly from speech.
 It integrates:
@@ -26,6 +27,7 @@ The system works with live microphone input or uploaded audio files and supports
 🎭 Emotion Classes
 Neutral • Happy • Sad • Angry • Fear • Disgust • Surprise • Boredom • Excited
 
+```
 <p align="center"> <img src="images/emotion_wheel.png" width="45%"> </p>
 📂 Sample Output Screenshots
 🔹 Main UI
@@ -63,7 +65,7 @@ Neutral • Happy • Sad • Angry • Fear • Disgust • Surprise • Boredo
 └── README.md                 # Documentation
 ```
 
-
+```
 🎵 Datasets Used
 All audio converted to 16kHz mono WAV.
 RAVDESS
@@ -127,3 +129,4 @@ Librosa
 OpenAI Whisper
 Streamlit
 Scikit-learn
+```
