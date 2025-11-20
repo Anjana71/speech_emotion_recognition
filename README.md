@@ -109,11 +109,11 @@ Dense + Softmax — final emotion classification
 
 🎚️ Extracted Audio Features
 MFCC
-Delta & Delta-Delta
+Delta & Delta-Delta MFCCs
 Chroma
 Mel-Spectrogram
-Zero-Crossing Rate
-Spectral Roll-off & Centroid
+
+
 These features capture the frequency, energy, harmony, and tone differences that distinguish emotions.
 
 🔮 Future Enhancements
