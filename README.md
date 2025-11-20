@@ -2,7 +2,7 @@
 
 A Hybrid Deep Learning + Whisper ASR System
 
-<p align="center"> <img src="ser" alt="SER Banner" width="80%"> </p>
+<p align="center"> <img src="ser.png" alt="SER Banner" width="80%"> </p>
 🎙️ Overview
 
 This project implements a Real-Time Speech Emotion Recognition (SER) system capable of detecting human emotions directly from speech.
