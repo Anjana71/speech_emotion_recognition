@@ -1,108 +1,170 @@
-# 🎙️ Real-Time Speech Emotion Recognition (SER)
+🌟 ✨ Real-Time Speech Emotion Recognition (SER)
 
-This project implements an advanced, real-time **Speech Emotion Recognition** system using deep learning. It combines **audio feature extraction**, a hybrid **LSTM-GRU** model for emotion classification, and **OpenAI Whisper** for speech-to-text transcription. The system is deployed via an interactive web interface using **Streamlit**.
+A Hybrid Deep Learning + Whisper ASR System
 
----
+<p align="center"> <img src="ser" alt="SER Banner" width="80%"> </p>
+🎙️ Overview
 
-## 🚀 Features
+This project implements a Real-Time Speech Emotion Recognition (SER) system capable of detecting human emotions directly from speech.
+It integrates:
 
-- 🎧 Real-time emotion detection from live or uploaded audio
-- 🧠 Hybrid LSTM-GRU model with attention mechanism
-- 🗣️ Whisper-powered speech transcription
-- 📊 Performance metrics: Accuracy, Precision, Recall, F1-Score
-- 📈 Emotion segmentation and visualization
-- 🌐 Interactive and lightweight UI built with Streamlit
+🎧 Audio feature extraction
 
----
+🧠 Hybrid LSTM–GRU deep learning model
 
-## 🧠 Emotion Classes
+🗣️ OpenAI Whisper ASR for speech-to-text
 
-- Neutral
-- Happy
-- Sad
-- Angry
-- Fear
-- Disgust
-- Surprise
-- Boredom
-- Excited
+🌐 Streamlit for a clean, interactive UI
 
----
+The system works with live microphone input or uploaded audio files and supports real-time emotion visualization.
 
-## 🗂️ Project Structure
+🚀 Key Features
 
-├── data/ # Audio datasets and extracted features
-├── models/ # Trained model files (.h5)
-├── Feature_extraction.py # Audio preprocessing and feature extraction
-├── lstm_gru_model.py # Deep learning model (LSTM + GRU + Attention)
-├── Rebuild_model.py # Load and rebuild trained model
-├── frontend.py # Streamlit frontend with real-time inference
-├── utils/ # Utility functions (e.g., segmentation, metrics)
-├── requirements.txt # Required Python packages
+🎤 Live microphone-based emotion detection
 
+📂 Emotion prediction from uploaded audio
 
-## 📦 Datasets Used
+🧠 LSTM + GRU + Attention hybrid architecture
 
-- [RAVDESS](https://zenodo.org/record/1188976)
-- [CREMA-D](https://github.com/CheyneyComputerScience/CREMA-D)
-- [TESS](https://dataverse.library.yorku.ca/dataset.xhtml?persistentId=doi:10.5683/SP2/E8H2MF)
-- [SAVEE](https://www.kaggle.com/datasets/barelydedicated/savee-dataset)
-- [EMO-DB](http://emodb.bilderbar.info/start.html)
+🗣️ Whisper ASR for transcription
 
-> All datasets are converted to 16kHz mono `.wav` format for consistency.
+🧭 Emotion segmentation/timeline visualization
 
+🌐 Streamlit web interface
 
-## 🛠️ Installation
+🔊 Support for multiple datasets, modes, and speakers
 
-1. **Clone the Repository**
-```bash
+🎭 Emotion Classes
+
+Neutral • Happy • Sad • Angry • Fear • Disgust • Surprise • Boredom • Excited
+
+<p align="center"> <img src="images/emotion_wheel.png" width="45%"> </p>
+📂 Sample Output Screenshots
+🔹 Main UI
+<p align="center"> <img src="images/ui_main.png" width="80%" alt="UI Main"> </p>
+🔹 Emotion Prediction Output
+<p align="center"> <img src="images/emotion_output.png" width="80%" alt="Emotion Output"> </p>
+🔹 Transcription Using Whisper ASR
+<p align="center"> <img src="images/transcription.png" width="80%" alt="Whisper Transcription"> </p>
+🔹 Emotion Segmentation Graph
+<p align="center"> <img src="images/emotion_graph.png" width="80%" alt="Emotion Graph"> </p>
+
+(Replace these placeholders with your actual screenshots: /images/yourimage.png)
+
+🧩 Project Structure
+📦 speech-emotion-recognition
+│
+├── data/                     # Raw datasets & extracted features
+├── models/                   # Trained .h5 model files
+├── Feature_extraction.py     # Audio preprocessing & feature extraction
+├── lstm_gru_model.py         # LSTM + GRU + Attention model
+├── Rebuild_model.py          # Load & rebuild trained model
+├── frontend.py               # Streamlit frontend
+├── utils/                    # Helper functions (segmentation, metrics, preprocessing)
+├── images/                   # UI, prediction & output images
+├── requirements.txt          # Dependencies
+└── README.md                 # Documentation
+
+🎵 Datasets Used
+
+All audio converted to 16kHz mono WAV.
+
+RAVDESS
+
+CREMA-D
+
+TESS
+
+SAVEE
+
+EMO-DB
+
+Using multiple datasets improves robustness across speakers, accents, and recording conditions.
+
+🛠️ Installation
+1️⃣ Clone the Repository
 git clone https://github.com/yourusername/speech-emotion-recognition.git
 cd speech-emotion-recognition
-Install Requirements
 
-
+2️⃣ Install Dependencies
 pip install -r requirements.txt
-Install FFmpeg
-Make sure FFmpeg is installed and added to your system PATH for audio conversion:
 
+3️⃣ Install FFmpeg
+
+Required for audio conversion and Whisper ASR.
 
 ▶️ How to Run
 
-streamlit run frontend.py
-Then open http://localhost:8501 in your browser.
+Start the Streamlit app:
 
-You can:
-Upload audio files (.wav, .mp3, etc.)
-Record real-time audio via microphone
-View predicted emotion and transcribed speech
-Monitor live emotion segments
+streamlit run frontend.py
+
+
+Visit http://localhost:8501
+ in your browser.
+
+You can now:
+
+🎙️ Record live audio
+
+📂 Upload .wav, .mp3, .ogg, etc.
+
+🧠 View real-time emotion prediction
+
+🗣️ See Whisper-generated transcript
+
+📈 Explore emotion segments over time
 
 🏗️ Model Architecture
-LSTM (256 units) for long-term temporal dependencies
-GRU (128 + 64 units) for efficient short-term context
-Multi-Head Attention for focus on emotional segments
-Dropout, BatchNorm for regularization
-Softmax output for 9-class classification
+<p align="center"> <img src="images/model_architecture.png" width="80%" alt="Architecture Diagram"> </p>
+🔧 Components
 
-📊 Results
-Metric	Score
-Accuracy	97.4%
-Precision	96.8%
-Recall	97.1%
-F1-Score	97.0%
+LSTM (256 units) — captures long-term emotion cues
 
-Trained on combined features (MFCC + Delta + Delta Delta + Chroma + Mel)
+GRU (128 → 64 units) — efficient short-term pattern modeling
+
+Multi-Head Attention — focuses on emotion-rich frames
+
+BatchNorm + Dropout — stabilizes and regularizes
+
+Dense + Softmax — final emotion classification
+
+🎚️ Extracted Audio Features
+
+MFCC
+
+Delta & Delta-Delta
+
+Chroma
+
+Mel-Spectrogram
+
+Zero-Crossing Rate
+
+Spectral Roll-off & Centroid
+
+These features capture the frequency, energy, harmony, and tone differences that distinguish emotions.
 
 🔮 Future Enhancements
-Facial emotion recognition integration
-Sentiment-aware response generation
-Multilingual emotion support
-Web/mobile deployment (Flask/FastAPI)
-Transformer-based models (e.g., Wav2Vec2, BERT)
 
+🤖 Facial Emotion Recognition + Audio (Multimodal System)
+
+🗣️ Multilingual Emotion Support
+
+🕸️ Web API (FastAPI/Flask)
+
+📱 Mobile App Deployment
+
+🔍 Transformer-based Speech Models (Wav2Vec2, HuBERT, Whisper Large-V3)
 
 📌 Acknowledgements
+
+TensorFlow / Keras
+
 Librosa
-TensorFlow
+
 OpenAI Whisper
+
 Streamlit
+
+Scikit-learn
