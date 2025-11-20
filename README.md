@@ -2,7 +2,7 @@
 
 A Hybrid Deep Learning + Whisper ASR System
 
-<p align="center"> <img src="ser.png" alt="SER Banner" width="80%"> </p>
+<p align="center"> <img src="Ser.png" alt="SER Banner" width="80%"> </p>
 🎙️ Overview
 
 This project implements a Real-Time Speech Emotion Recognition (SER) system capable of detecting human emotions directly from speech.
@@ -41,17 +41,26 @@ Neutral • Happy • Sad • Angry • Fear • Disgust • Surprise • Boredo
 <p align="center"> <img src="images/emotion_wheel.png" width="45%"> </p>
 📂 Sample Output Screenshots
 🔹 Main UI
-<p align="center"> <img src="images/ui_main.png" width="80%" alt="UI Main"> </p>
+<p align="center"> <img src="UI.png" width="80%" alt="UI Main"> </p>
+🔹 Uploading file
+<p align="center"> <img src="uploading audio file.png" width="80%" alt="Emotion Output"> </p>
+🔹 Output Loading
+<p align="center"> <img src="Loadingt.png" width="80%" alt="Emotion Output"> </p>
 🔹 Emotion Prediction Output
-<p align="center"> <img src="images/emotion_output.png" width="80%" alt="Emotion Output"> </p>
+<p align="center"> <img src="Output.png" width="80%" alt="Emotion Output"> </p>
+🔹 Emotion Prediction Output
+<p align="center"> <img src="Output1.png" width="80%" alt="Emotion Output"> </p>
+🔹 Emotion Prediction Output
+<p align="center"> <img src="Output of video file.png" width="80%" alt="Emotion Output"> </p>
 🔹 Transcription Using Whisper ASR
-<p align="center"> <img src="images/transcription.png" width="80%" alt="Whisper Transcription"> </p>
-🔹 Emotion Segmentation Graph
-<p align="center"> <img src="images/emotion_graph.png" width="80%" alt="Emotion Graph"> </p>
+<p align="center"> <img src="Emotion with transcription.png" width="80%" alt="Whisper Transcription"> </p>
+
 
 (Replace these placeholders with your actual screenshots: /images/yourimage.png)
 
-🧩 Project Structure
+## 🧩 Project Structure
+
+```
 📦 speech-emotion-recognition
 │
 ├── data/                     # Raw datasets & extracted features
@@ -64,6 +73,8 @@ Neutral • Happy • Sad • Angry • Fear • Disgust • Surprise • Boredo
 ├── images/                   # UI, prediction & output images
 ├── requirements.txt          # Dependencies
 └── README.md                 # Documentation
+```
+
 
 🎵 Datasets Used
 
